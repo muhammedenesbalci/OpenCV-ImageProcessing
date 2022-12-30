@@ -71,4 +71,19 @@ plt.figure(), plt.imshow(eq_hist, cmap="gray")
 eq_img_hist = cv2.calcHist([eq_hist], channels=[0], mask=None, histSize=[256], ranges=[0, 256])
 plt.figure(), plt.plot(eq_img_hist)
 
+# Last example
+img = cv2.imread("img1.jpg", 0)
+plt.figure(), plt.imshow(img, cmap="gray"), plt.title("img in gray scale")
+
+img_hist = cv2.calcHist([img], channels=[0], mask=None, histSize=[256], ranges=[0, 256])
+plt.figure(), plt.plot(img_hist), plt.title("img gray histogram graph")
+
+# img equalize histogram
+
+eq_hist = cv2.equalizeHist(img)
+plt.figure(), plt.imshow(eq_hist, cmap="gray"), plt.title("img equalized hist")
+
+eq_img_hist = cv2.calcHist([eq_hist], channels=[0], mask=None, histSize=[256], ranges=[0, 256])
+plt.figure(), plt.plot(eq_img_hist), plt.title("img equalized hist graphic")
+
 plt.show()
